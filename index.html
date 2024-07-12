@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang = "en">
 <head>
-    <meta charset="UTF-8"> <
+    <meta charset="UTF-8"> 
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width-device-width, initial-scale-1.0">
     <title>Personal Portfolio Website</title>
@@ -14,7 +14,6 @@
         <nav>
             <div class="logo"><span class="pink">M</span><span class="white">ahitha</span>.</div>
             <ul id="sidemenu">
-                
                 <li><a href="#header">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#services">Services</a></li>
@@ -22,6 +21,7 @@
                 <li><a href="#contact">Contact</a></li> 
                 <i class="fas fa-times" onclick="closemenu()"></i>
             </ul>
+        
             <i class="fas fa-bars" onclick="openmenu()"></i>
         </nav>
         <div class="header-text">
@@ -30,10 +30,10 @@
         </div>
     </div>
 </div>
-<!-------------about-------------- -->
-<div id="about">
+<!-- -----------about-------------- -->
+ <div id="about">
     <div class="container">
-        <div class="row">
+        <!-- <div class="row"> -->
           <div class="about-col-1">
             <img src="images/profilee.jpeg"> 
           </div>
@@ -67,12 +67,11 @@
             </div>
             <!-- <a href="C:\Users\mahit\Downloads\Hema Mahitha Mudundi Resume.docx" download="Hema_Mahitha_Resume.pdf" class="view-resume-btn">View Resume --> </a> 
           </div>
-
-        </div>
+        <!-- </div> -->
     </div> 
- </div>
+ </div> 
 <!-- --------services---------- -->
- <div id="services">
+<div id="services">
     <div class="container">
         <h1 class="sub-title">My Services</h1> 
         <div class="services-list">
@@ -97,10 +96,10 @@
 
         </div>
     </div>
- </div>
+ </div> 
 
 <!-- -------------portfolio-------------- -->
- <div id="portfolio">
+  <div id="portfolio">
     <div class="container">
         <h1 class="sub-title">My Work</h1> 
         <div class="work-list">
@@ -131,9 +130,9 @@
         </div>
         <a href="#" class ="btn">See more</a>
     </div>
- </div>
+</div> 
  <!-- --------------contact---------------- -->
-  <div id="contact">
+<div id="contact">
     <div class="container">
         <div class="row">
             <div class="contact-left">
@@ -164,47 +163,46 @@
     </div>
 </div>
 
- <script>
+<script>
 
-    var tablinks = document.getElementsByClassName("tab-links");
-    var tabcontents = document.getElementsByClassName("tab-contents");
-    function opentab(tabname){
-        for(tablink of tablinks){
-            tablink.classList.remove("active-link");
+     var tablinks = document.getElementsByClassName("tab-links"); 
+     var tabcontents = document.getElementsByClassName("tab-contents"); 
+     function opentab(tabname){
+         for(tablink of tablinks){
+            tablink.classList.remove("active-link"); 
         }
-        for(tabcontent of tabcontents){
-            tabcontent.classList.remove("active-tab");
-        }
-        event.currentTarget.classList.add("active-link");
-        document.getElementById(tabname).classList.add("active-tab");
-    }
- </script>
-
- <script>
-    var sidemenu = document.getElementById("sidemenu");
-    function openmenu(){
-        sidemenu.style.right ="0";
-    }
-    function closemenu(){
-        sidemenu.style.right ="-200px";
-    }
- </script>
- <script>
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbzW0Q_0IzT8vEIy-4ULuuGpbWUU3bmgUoxWKnOAadLNiqP0rzdV0bv9qjuV0NlSpzyb/exec'
-    const form = document.forms['submit-to-google-sheet']
-    const msg = document.getElementById("msg")
-    form.addEventListener('submit', e => {
-      e.preventDefault()
-      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-        .then(response => {
-            msg.innerHTML = "Message sent successfully"
-            setTimeout(function(){
-                msg.innerHTML = ""
-            },5000)
-            form.reset()
+         for(tabcontent of tabcontents){ 
+             tabcontent.classList.remove("active-tab"); 
+         } 
+         event.currentTarget.classList.add("active-link"); 
+         document.getElementById(tabname).classList.add("active-tab");
+     } 
+</script> 
+<script> 
+     var sidemenu = document.getElementById("sidemenu"); 
+     function openmenu(){ 
+         sidemenu.style.right ="0"; 
+     } 
+     function closemenu(){
+         sidemenu.style.right ="-200px"; 
+     } 
+</script> 
+<script> 
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbzW0Q_0IzT8vEIy-4ULuuGpbWUU3bmgUoxWKnOAadLNiqP0rzdV0bv9qjuV0NlSpzyb/exec' 
+    const form = document.forms['submit-to-google-sheet'] 
+    const msg = document.getElementById("msg") 
+    form.addEventListener('submit', e => { 
+        e.preventDefault() 
+        fetch(scriptURL, { method: 'POST', body: new FormData(form)}) 
+         .then(response => { 
+             msg.innerHTML = "Message sent successfully" 
+             setTimeout(function(){ 
+                 msg.innerHTML = "" 
+             },5000)
+             form.reset()
         })
-        .catch(error => console.error('Error!', error.message))
-    })
-  </script>
-</body>
-</html>
+         .catch(error => console.error('Error!', error.message)) 
+    }) 
+</script> 
+</body> 
+</html> 
